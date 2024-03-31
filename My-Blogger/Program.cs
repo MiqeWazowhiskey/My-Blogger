@@ -8,14 +8,25 @@ builder.Services.AddDbContext<MyBlogDbContext>(options =>
 {
     options.UseSqlServer(connectionString);
 });
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
-
-
-
-app.MapGet("/articles", async (MyBlogDbContext dbContext) =>
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller}/{action}/{id?}"
+);
+app.UseSwaggerUI(options =>
 {
-    var articles = await dbContext.Articles.ToListAsync();
-    return Results.Ok(articles);
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+    options.RoutePrefix = string.Empty;
 });
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.Run();
