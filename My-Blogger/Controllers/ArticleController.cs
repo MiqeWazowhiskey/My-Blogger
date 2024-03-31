@@ -68,4 +68,18 @@ public class ArticleController : ControllerBase
         await _context.SaveChangesAsync();
         return Ok(_article);
     }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteArticle(int id)
+    {
+        var article = await _context.Articles.FindAsync(id);
+        if (article is null)
+        {
+            return BadRequest("ArticleNotFound");
+        }
+        _context.Articles.Remove(article);
+        await _context.SaveChangesAsync();
+        return Ok();
+    }
+    
 }
