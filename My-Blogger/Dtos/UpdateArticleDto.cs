@@ -1,3 +1,3 @@
 namespace My_Blogger.Dtos;
 
-public record UpdateArticleDto(int Id, string? Title, string? Body);
+public record UpdateArticleDto(Guid Id, string? Title, string? Body);

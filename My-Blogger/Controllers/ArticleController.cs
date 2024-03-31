@@ -25,7 +25,7 @@ public class ArticleController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetArticle(int id)
+    public async Task<IActionResult> GetArticle(Guid id)
     {
         var article = await _context.Articles.FindAsync(id);
         return article is null ? BadRequest("Article Not Found.") : Ok(article);
@@ -36,7 +36,7 @@ public class ArticleController : ControllerBase
     {
         var _article = new Article()
         {
-            Id = 123,
+            Id = new Guid(),
             AuthorId = article.AuthorId,
             CreationTime = new DateOnly(),
             Title = article.Title,
@@ -70,7 +70,7 @@ public class ArticleController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteArticle(int id)
+    public async Task<IActionResult> DeleteArticle(Guid id)
     {
         var article = await _context.Articles.FindAsync(id);
         if (article is null)

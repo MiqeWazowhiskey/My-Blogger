@@ -19,7 +19,7 @@ public class AuthorController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetAuthor(int id)
+    public async Task<IActionResult> GetAuthor(Guid id)
     {
         var author = await _context.Authors.FindAsync(id);
         return author is null ? BadRequest("Author Not Found") : Ok(author);
@@ -30,7 +30,7 @@ public class AuthorController : ControllerBase
     {
         var _author = new Author()
         {
-            Id = 123,
+            Id = new Guid(),
             Name = author.Name,
             CreationTime = new DateOnly()
         };
@@ -55,7 +55,7 @@ public class AuthorController : ControllerBase
     }
 
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteAuthor(int id)
+    public async Task<IActionResult> DeleteAuthor(Guid id)
     {
         var author = await _context.Authors.FindAsync(id);
         if (author is null)

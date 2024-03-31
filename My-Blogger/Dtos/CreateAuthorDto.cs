@@ -1,3 +1,3 @@
 namespace My_Blogger.Dtos;
 
-public record CreateAuthorDto(int Id, string Name);
+public record CreateAuthorDto(Guid Id, string Name);

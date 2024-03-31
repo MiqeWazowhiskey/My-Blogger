@@ -1,3 +1,3 @@
 namespace My_Blogger.Dtos;
 
-public record ArticleDto(int Id,int AuthorId, string Title, string Body, DateOnly CreationTime);
+public record ArticleDto(Guid Id,Guid AuthorId, string Title, string Body, DateOnly CreationTime);

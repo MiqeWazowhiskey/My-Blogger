@@ -8,4 +8,10 @@ public class MyBlogDbContext : DbContext
     public MyBlogDbContext(DbContextOptions<MyBlogDbContext> options) : base(options){}
     public DbSet<Article> Articles => Set<Article>();
     public DbSet<Author> Authors => Set<Author>();
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Article>()
+            .HasOne<Article>()
+            .WithMany().HasForeignKey(a => a.AuthorId);
+    }
 }

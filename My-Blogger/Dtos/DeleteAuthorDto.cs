@@ -1,3 +1,3 @@
 namespace My_Blogger.Dtos;
 
-public record DeleteAuthorDto(int Id);
+public record DeleteAuthorDto(Guid Id);
