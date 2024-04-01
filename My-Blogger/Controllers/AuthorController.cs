@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using My_Blogger.Data;
@@ -18,14 +19,14 @@ public class AuthorController : ControllerBase
         _context = context;
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id}"),Authorize]
     public async Task<IActionResult> GetAuthor(Guid id)
     {
         var author = await _context.Authors.FindAsync(id);
         return author is null ? BadRequest("Author Not Found") : Ok(author);
     }
 
-    [HttpPost]
+    [HttpPost,Authorize]
     public async Task<IActionResult> CreateAuthor([FromBody] CreateAuthorDto author)
     {
         var _author = new Author()
@@ -39,7 +40,7 @@ public class AuthorController : ControllerBase
         return Ok(_author);
     }
 
-    [HttpPut]
+    [HttpPut,Authorize]
     public async Task<IActionResult> UpdateAuthor([FromBody] UpdateAuthorDto author)
     {
         var _author = await _context.Authors.FindAsync(author.Id);
@@ -54,7 +55,7 @@ public class AuthorController : ControllerBase
         return Ok(_author);
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete("{id}"),Authorize]
     public async Task<IActionResult> DeleteAuthor(Guid id)
     {
         var author = await _context.Authors.FindAsync(id);

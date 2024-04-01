@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using My_Blogger.Data;
@@ -17,21 +18,21 @@ public class ArticleController : ControllerBase
     {
         _context = context;
     }
-    [HttpGet]
+    [HttpGet,Authorize]
     public async Task<IActionResult> GetAllArticles()
     {
         var articles = await _context.Articles.ToListAsync();
         return Ok(articles);
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id}"),Authorize]
     public async Task<IActionResult> GetArticle(Guid id)
     {
         var article = await _context.Articles.FindAsync(id);
         return article is null ? BadRequest("Article Not Found.") : Ok(article);
     }
 
-    [HttpPost]
+    [HttpPost,Authorize]
     public async Task<IActionResult> CreateArticle([FromBody] CreateArticleDto article)
     {
         var _article = new Article()
@@ -47,7 +48,7 @@ public class ArticleController : ControllerBase
         return Ok(_article);
     }
 
-    [HttpPatch("{id}")]
+    [HttpPatch("{id}"),Authorize]
     public async Task<IActionResult> UpdateArticle([FromBody] UpdateArticleDto article)
     {
         var _article = await _context.Articles.FindAsync(article.Id);
@@ -69,7 +70,7 @@ public class ArticleController : ControllerBase
         return Ok(_article);
     }
 
-    [HttpDelete("{id}")]
+    [HttpDelete("{id}"),Authorize]
     public async Task<IActionResult> DeleteArticle(Guid id)
     {
         var article = await _context.Articles.FindAsync(id);
