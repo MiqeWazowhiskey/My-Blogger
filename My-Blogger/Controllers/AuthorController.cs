@@ -1,10 +1,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using My_Blogger.Data;
 using My_Blogger.Dtos;
 using My_Blogger.Entities;
-
 
 namespace My_Blogger.Controllers;
 
@@ -17,6 +15,7 @@ public class AuthorController : ControllerBase
     public AuthorController(MyBlogDbContext context)
     {
         _context = context;
+        _context.ChangeTracker.Clear();
     }
 
     [HttpGet("{id}"),Authorize]

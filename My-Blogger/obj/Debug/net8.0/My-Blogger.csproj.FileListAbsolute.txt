@@ -143,3 +143,4 @@
 /Users/miqewazwohiskey/RiderProjects/My-Blogger/My-Blogger/bin/Debug/net8.0/Scrutor.dll
 /Users/miqewazwohiskey/RiderProjects/My-Blogger/My-Blogger/bin/Debug/net8.0/Swashbuckle.AspNetCore.Filters.dll
 /Users/miqewazwohiskey/RiderProjects/My-Blogger/My-Blogger/bin/Debug/net8.0/Swashbuckle.AspNetCore.Filters.Abstractions.dll
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/My-Blogger/obj/Debug/net8.0/My-Blogger.sourcelink.json

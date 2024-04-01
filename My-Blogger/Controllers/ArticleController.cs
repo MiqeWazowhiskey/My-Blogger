@@ -5,7 +5,6 @@ using My_Blogger.Data;
 using My_Blogger.Dtos;
 using My_Blogger.Entities;
 
-
 namespace My_Blogger.Controllers;
 
 [Route("api/[controller]")]
@@ -17,6 +16,7 @@ public class ArticleController : ControllerBase
     public ArticleController(MyBlogDbContext context)
     {
         _context = context;
+        _context.ChangeTracker.Clear();
     }
     [HttpGet,Authorize]
     public async Task<IActionResult> GetAllArticles()

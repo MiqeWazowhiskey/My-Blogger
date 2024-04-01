@@ -1,4 +1,3 @@
-/*
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 
@@ -6,6 +5,7 @@ namespace My_Blogger.Middlewares;
 
 public class AuthMiddleware
 {
+    /*
     private readonly RequestDelegate _next;
 
     public AuthMiddleware(RequestDelegate next)
@@ -41,5 +41,6 @@ public class AuthMiddleware
         
         await _next.Invoke(context);
     }
+    */
 }
-*/
+

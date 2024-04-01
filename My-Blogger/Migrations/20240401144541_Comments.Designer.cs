@@ -12,8 +12,8 @@ using My_Blogger.Data;
 namespace My_Blogger.Migrations
 {
     [DbContext(typeof(MyBlogDbContext))]
-    [Migration("20240401133044_Initial")]
-    partial class Initial
+    [Migration("20240401144541_Comments")]
+    partial class Comments
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -268,6 +268,33 @@ namespace My_Blogger.Migrations
                     b.ToTable("Authors");
                 });
 
+            modelBuilder.Entity("My_Blogger.Entities.Comment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ArticleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CommentBody")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<DateOnly>("CreationTime")
+                        .HasColumnType("date");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArticleId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -324,6 +351,15 @@ namespace My_Blogger.Migrations
                     b.HasOne("My_Blogger.Entities.Article", null)
                         .WithMany()
                         .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("My_Blogger.Entities.Comment", b =>
+                {
+                    b.HasOne("My_Blogger.Entities.Comment", null)
+                        .WithMany()
+                        .HasForeignKey("ArticleId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
