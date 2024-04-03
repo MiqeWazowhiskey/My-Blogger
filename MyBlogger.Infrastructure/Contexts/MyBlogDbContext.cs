@@ -16,7 +16,7 @@ public class MyBlogDbContext : IdentityDbContext<IdentityUser>
         base.OnModelCreating(modelBuilder);
         
         modelBuilder.Entity<Article>()
-            .HasOne(x => x.Author)
+            .HasOne<Author>()
             .WithMany(x => x.Articles).HasForeignKey(a => a.AuthorId).OnDelete(DeleteBehavior.Restrict);
 
         modelBuilder.Entity<Comment>()

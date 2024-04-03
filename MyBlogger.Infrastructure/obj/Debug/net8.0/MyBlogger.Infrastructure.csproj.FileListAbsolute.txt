@@ -14,3 +14,5 @@
 /Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/refint/MyBlogger.Infrastructure.dll
 /Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/MyBlogger.Infrastructure.pdb
 /Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/ref/MyBlogger.Infrastructure.dll
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/bin/Debug/net8.0/MyBlogger.Infrastructure.runtimeconfig.json
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/MyBlogger.Infrastructure.genruntimeconfig.cache

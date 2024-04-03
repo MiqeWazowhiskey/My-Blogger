@@ -5,6 +5,10 @@ using Swashbuckle.AspNetCore.Filters;
 using MyBlogger.Core;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Configuration.AddJsonFile("appsettings.json");
+builder.Configuration.AddJsonFile("appsettings.Development.json", optional: true);
+
 builder.Services.AddApplicationLayer();
 builder.Services.AddPersistenceInfrastructure(builder.Configuration);
 builder.Services.AddControllers();
