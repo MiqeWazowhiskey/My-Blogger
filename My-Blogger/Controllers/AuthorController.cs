@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using My_Blogger.Data;
-using My_Blogger.Dtos;
-using My_Blogger.Entities;
+using My_Blogger.Services;
+using MyBlogger.Core.DTOs;
 
 namespace My_Blogger.Controllers;
 
@@ -10,62 +9,35 @@ namespace My_Blogger.Controllers;
 [ApiController]
 public class AuthorController : ControllerBase
 {
-    private readonly MyBlogDbContext _context;
 
-    public AuthorController(MyBlogDbContext context)
+    private AuthorService _authorService;
+    public AuthorController(AuthorService authorService)
     {
-        _context = context;
-        _context.ChangeTracker.Clear();
+        _authorService = authorService;
     }
 
     [HttpGet("{id}"),Authorize]
     public async Task<IActionResult> GetAuthor(Guid id)
     {
-        var author = await _context.Authors.FindAsync(id);
-        return author is null ? BadRequest("Author Not Found") : Ok(author);
+        return Ok(await _authorService.GetAuthor(id));
     }
 
     [HttpPost,Authorize]
     public async Task<IActionResult> CreateAuthor([FromBody] CreateAuthorDto author)
     {
-        var _author = new Author()
-        {
-            Id = new Guid(),
-            Name = author.Name,
-            CreationTime = new DateOnly()
-        };
-        _context.Authors.Add(_author);
-        await _context.SaveChangesAsync();
-        return Ok(_author);
+        return Ok(await _authorService.CreateAuthor(author));
     }
 
     [HttpPut,Authorize]
     public async Task<IActionResult> UpdateAuthor([FromBody] UpdateAuthorDto author)
     {
-        var _author = await _context.Authors.FindAsync(author.Id);
-        if (_author is null)
-        {
-            return BadRequest("Author Not Found");
-        }
-
-        _author.Name = author.Name;
-        _author.CreationTime = new DateOnly();
-        await _context.SaveChangesAsync();
-        return Ok(_author);
+        return Ok(await _authorService.UpdateAuthor(author));
     }
 
     [HttpDelete("{id}"),Authorize]
     public async Task<IActionResult> DeleteAuthor(Guid id)
     {
-        var author = await _context.Authors.FindAsync(id);
-        if (author is null)
-        {
-            return BadRequest("Author Not Found.");
-        }
-
-        _context.Authors.Remove(author);
-        await _context.SaveChangesAsync();
-        return Ok();
+        return Ok(await _authorService.DeleteAuthor(id));
     }
     
 }

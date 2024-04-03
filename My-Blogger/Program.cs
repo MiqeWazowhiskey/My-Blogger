@@ -1,15 +1,12 @@
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using My_Blogger.Data;
+using MyBlogger.Infrastructure;
 using Swashbuckle.AspNetCore.Filters;
+using MyBlogger.Core;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<MyBlogDbContext>(options =>
-{
-    options.UseSqlServer(connectionString);
-});
+builder.Services.AddApplicationLayer();
+builder.Services.AddPersistenceInfrastructure(builder.Configuration);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
@@ -24,7 +21,6 @@ builder.Services.AddSwaggerGen(options =>
     options.OperationFilter<SecurityRequirementsOperationFilter>();
 });
 builder.Services.AddAuthorization();
-builder.Services.AddIdentityApiEndpoints<IdentityUser>().AddEntityFrameworkStores<MyBlogDbContext>();
 
 var app = builder.Build();
 

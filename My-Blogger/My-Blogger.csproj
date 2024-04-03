@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.3" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.3">
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         <PrivateAssets>all</PrivateAssets>
@@ -26,7 +27,11 @@
 
     <ItemGroup>
       <Folder Include="Middlewares\" />
-      <Folder Include="Migrations\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MyBlogger.Core\MyBlogger.Core.csproj" />
+      <ProjectReference Include="..\MyBlogger.Infrastructure\MyBlogger.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

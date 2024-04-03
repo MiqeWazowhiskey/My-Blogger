@@ -1,0 +1,16 @@
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/bin/Debug/net8.0/MyBlogger.Infrastructure.deps.json
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/bin/Debug/net8.0/MyBlogger.Infrastructure.dll
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/bin/Debug/net8.0/MyBlogger.Infrastructure.pdb
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/bin/Debug/net8.0/MyBlogger.Core.dll
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/bin/Debug/net8.0/MyBlogger.Core.pdb
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/MyBlogger.Infrastructure.csproj.AssemblyReference.cache
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/MyBlogger.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/MyBlogger.Infrastructure.AssemblyInfoInputs.cache
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/MyBlogger.Infrastructure.AssemblyInfo.cs
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/MyBlogger.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/MyBlogger.Infrastructure.sourcelink.json
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/MyBlogge.5324F16D.Up2Date
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/MyBlogger.Infrastructure.dll
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/refint/MyBlogger.Infrastructure.dll
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/MyBlogger.Infrastructure.pdb
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Infrastructure/obj/Debug/net8.0/ref/MyBlogger.Infrastructure.dll

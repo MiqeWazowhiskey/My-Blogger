@@ -1,0 +1,13 @@
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Core/bin/Debug/net8.0/MyBlogger.Core.deps.json
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Core/bin/Debug/net8.0/MyBlogger.Core.dll
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Core/bin/Debug/net8.0/MyBlogger.Core.pdb
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Core/obj/Debug/net8.0/MyBlogger.Core.csproj.AssemblyReference.cache
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Core/obj/Debug/net8.0/MyBlogger.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Core/obj/Debug/net8.0/MyBlogger.Core.AssemblyInfoInputs.cache
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Core/obj/Debug/net8.0/MyBlogger.Core.AssemblyInfo.cs
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Core/obj/Debug/net8.0/MyBlogger.Core.csproj.CoreCompileInputs.cache
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Core/obj/Debug/net8.0/MyBlogger.Core.sourcelink.json
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Core/obj/Debug/net8.0/MyBlogger.Core.dll
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Core/obj/Debug/net8.0/refint/MyBlogger.Core.dll
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Core/obj/Debug/net8.0/MyBlogger.Core.pdb
+/Users/miqewazwohiskey/RiderProjects/My-Blogger/MyBlogger.Core/obj/Debug/net8.0/ref/MyBlogger.Core.dll
